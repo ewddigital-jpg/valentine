@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff8a80 50%, #ffb3ba 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .question {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .gif-container {
+            margin-bottom: 40px;
+        }
+
+        .gif-container img {
+            max-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            min-height: 100px;
+        }
+
+        .btn {
+            padding: 20px 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+            color: white;
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .btn-yes:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.5);
+        }
+
+        .btn-no {
+            background: linear-gradient(135deg, #f44336, #ff7043);
+            color: white;
+            box-shadow: 0 6px 20px rgba(244, 67, 54, 0.4);
+        }
+
+        .btn-no:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 67, 54, 0.5);
+        }
+
+        .please-text {
+            margin-top: 30px;
+            font-size: 2rem;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            font-style: italic;
+        }
+
+        .please-text.visible {
+            opacity: 1;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .success-screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-screen.visible {
+            display: flex;
+        }
+
+        .success-text {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .hearts {
+            font-size: 4rem;
+            animation: heartbeat 1s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .main-content {
+            display: block;
+        }
+
+        .main-content.hidden {
+            display: none;
+        }
+
+        /* Floating hearts background */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="heartsContainer"></div>
+
+    <div class="container">
+        <div class="main-content" id="mainContent">
+            <h1 class="question">Do you want to be my Valentine?</h1>
+            
+            <div class="gif-container">
+                <img src="minion.gif" alt="Cute Minion">
+            </div>
+
+            <div class="buttons">
+                <button class="btn btn-yes" id="yesBtn" onclick="sayYes()">Yes</button>
+                <button class="btn btn-no" id="noBtn" onclick="sayNo()">No</button>
+            </div>
+
+            <p class="please-text" id="pleaseText">babe please? 🥺</p>
+        </div>
+
+        <div class="success-screen" id="successScreen">
+            <div class="hearts">💕💖💕</div>
+            <h1 class="success-text">Yayyy! I love you! 💕</h1>
+            <div class="gif-container">
+                <img src="minion.gif" alt="Happy Minion">
+            </div>
+            <div class="hearts">😘💝😘</div>
+        </div>
+    </div>
+
+    <script>
+        let yesSize = 1;
+        let noClicks = 0;
+        const pleaseMessages = [
+            "babe please? 🥺",
+            "pretty please? 🥺💕",
+            "come on... 😢",
+            "I'll be sad... 😭",
+            "just say yes! 💖",
+            "you know you want to! 😏",
+            "PLEASE! 😭💕",
+            "I'm begging you! 🙏",
+            "don't do this to me! 💔",
+            "YESYESYES! 💕💕💕"
+        ];
+
+        function sayNo() {
+            noClicks++;
+            yesSize += 0.3;
+            
+            const yesBtn = document.getElementById('yesBtn');
+            const noBtn = document.getElementById('noBtn');
+            const pleaseText = document.getElementById('pleaseText');
+            
+            // Make Yes button bigger
+            yesBtn.style.transform = `scale(${yesSize})`;
+            yesBtn.style.zIndex = noClicks;
+            
+            // Make No button smaller (but not too small)
+            const noScale = Math.max(0.3, 1 - (noClicks * 0.1));
+            noBtn.style.transform = `scale(${noScale})`;
+            
+            // Show and update please text
+            pleaseText.classList.add('visible');
+            const messageIndex = Math.min(noClicks - 1, pleaseMessages.length - 1);
+            pleaseText.textContent = pleaseMessages[messageIndex];
+            
+            // Add shake animation
+            pleaseText.style.animation = 'none';
+            setTimeout(() => {
+                pleaseText.style.animation = 'shake 0.5s ease-in-out';
+            }, 10);
+
+            // Move No button to random position after a few clicks
+            if (noClicks >= 3) {
+                const randomX = (Math.random() - 0.5) * 100;
+                const randomY = (Math.random() - 0.5) * 50;
+                noBtn.style.position = 'relative';
+                noBtn.style.left = `${randomX}px`;
+                noBtn.style.top = `${randomY}px`;
+            }
+        }
+
+        function sayYes() {
+            document.getElementById('mainContent').classList.add('hidden');
+            document.getElementById('successScreen').classList.add('visible');
+            createCelebration();
+        }
+
+        function createCelebration() {
+            const container = document.getElementById('heartsContainer');
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = ['💕', '💖', '❤️', '💗', '💝', '😍'][Math.floor(Math.random() * 6)];
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+                    heart.style.animationDelay = Math.random() * 2 + 's';
+                    container.appendChild(heart);
+                }, i * 100);
+            }
+        }
+
+        // Create initial floating hearts
+        function createFloatingHearts() {
+            const container = document.getElementById('heartsContainer');
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = ['💕', '💖', '❤️'][Math.floor(Math.random() * 3)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (6 + Math.random() * 4) + 's';
+                heart.style.animationDelay = Math.random() * 6 + 's';
+                container.appendChild(heart);
+            }
+        }
+
+        createFloatingHearts();
+    </script>
+</body>
+</html>
