@@ -1,0 +1,260 @@
+[
+  {
+    "id": "technical_day",
+    "name": "Technical Skill Day",
+    "purpose": "Refine mechanics, timing, and defensive decisions without high residual fatigue.",
+    "primary_goal": "skill_quality",
+    "secondary_goals": ["reaction", "staying_loose"],
+    "suitable_when": ["between_hard_days", "after_work_evening", "fight_camp_skill_focus"],
+    "avoid_when": ["acute_hand_pain", "post_concussion_symptoms"],
+    "preferred_exercise_categories": ["boxing_specific", "footwork", "reaction", "mobility"],
+    "preferred_primary_qualities": ["timing", "precision", "relaxation_under_speed"],
+    "excluded_categories": ["lower_body_strength", "conditioning_general"],
+    "excluded_exercises": ["back squat", "hill sprints"],
+    "target_fatigue_range": [1, 2],
+    "estimated_recovery_cost": "low",
+    "session_duration_range_min": [35, 65],
+    "session_structure_template": [
+      "8-10 min mobility flow to stay loose",
+      "4-6 rounds shadowboxing technical rounds",
+      "2-4 rounds defensive shadow rounds with cue reactions",
+      "5-10 min breathing reset"
+    ],
+    "fight_week_ok": true,
+    "double_session_ok": true,
+    "notes_for_athlete": [
+      "Stay relaxed in shoulders and jaw to improve staying loose.",
+      "Include visual cue drills to target reaction weakness.",
+      "Keep nutrition disciplined after session to support body weight control."
+    ]
+  },
+  {
+    "id": "explosive_day",
+    "name": "Explosive Power Day",
+    "purpose": "Develop lower-body and rotational explosiveness while athlete is neurologically fresh.",
+    "primary_goal": "explosive_power",
+    "secondary_goals": ["explosiveness", "reaction"],
+    "suitable_when": ["well_recovered_morning", "48h_from_hard_sparring", "low_work_stress_day"],
+    "avoid_when": ["significant_leg_soreness", "day_after_hard_sparring"],
+    "preferred_exercise_categories": ["lower_body_power", "rotational_power", "upper_body_power"],
+    "preferred_primary_qualities": ["rate_of_force_development", "hip_to_hand_transfer"],
+    "excluded_categories": ["conditioning_general", "aerobic_base"],
+    "excluded_exercises": ["sprint intervals", "zone 2 run"],
+    "target_fatigue_range": [2, 3],
+    "estimated_recovery_cost": "moderate",
+    "session_duration_range_min": [40, 70],
+    "session_structure_template": [
+      "10 min dynamic warm-up and ankle/hip prep",
+      "3-5 sets countermovement jump and box jump",
+      "3-5 sets rotational medicine ball throw and landmine rotational press",
+      "2-3 short speed rounds (shadowboxing fast flurries)"
+    ],
+    "fight_week_ok": true,
+    "double_session_ok": false,
+    "notes_for_athlete": [
+      "Perform explosive work first when fresh.",
+      "Cap volume once jump height or punch speed drops.",
+      "Avoid random snacking after training; prep post-session meal in advance."
+    ]
+  },
+  {
+    "id": "strength_day_lower",
+    "name": "Lower Strength Day",
+    "purpose": "Build force production for foot drive, positioning, and punch support.",
+    "primary_goal": "max_strength",
+    "secondary_goals": ["explosiveness", "structural_resilience"],
+    "suitable_when": ["non_sparring_day", "at_least_48h_before_sprints", "gym_access"],
+    "avoid_when": ["within_24h_of_hard_sparring", "knee_pain_flare"],
+    "preferred_exercise_categories": ["lower_body_strength", "trunk_stability"],
+    "preferred_primary_qualities": ["force_production", "single_leg_control"],
+    "excluded_categories": ["conditioning_general", "conditioning_boxing_specific"],
+    "excluded_exercises": ["hill sprints", "boxing 30/30 flurry intervals"],
+    "target_fatigue_range": [3, 4],
+    "estimated_recovery_cost": "high",
+    "session_duration_range_min": [50, 85],
+    "session_structure_template": [
+      "10-12 min movement prep",
+      "Main lift: back squat or Bulgarian split squat",
+      "Accessory unilateral strength and trunk stability",
+      "5-8 min easy shadow plus breathing reset"
+    ],
+    "fight_week_ok": false,
+    "double_session_ok": false,
+    "notes_for_athlete": [
+      "Keep this away from hard sparring and sprint-heavy days.",
+      "Quality reps over ego loading to keep hips loose.",
+      "Meal prep protein and carbs on this day to improve diet discipline."
+    ]
+  },
+  {
+    "id": "strength_day_upper_rotation",
+    "name": "Upper + Rotation Strength Day",
+    "purpose": "Support punching force transfer with upper-body strength and anti/rotational trunk work.",
+    "primary_goal": "max_strength",
+    "secondary_goals": ["rotation_transfer", "posture_endurance"],
+    "suitable_when": ["non_sparring_day", "moderate_energy", "gym_or_band_setup"],
+    "avoid_when": ["acute_shoulder_irritation", "hand_wrist_flare"],
+    "preferred_exercise_categories": ["upper_body_strength", "rotational_power", "trunk_stability"],
+    "preferred_primary_qualities": ["force_transfer", "anti_rotation_control"],
+    "excluded_categories": ["conditioning_general", "recovery"],
+    "excluded_exercises": ["sprint intervals", "parasympathetic downregulation walk"],
+    "target_fatigue_range": [2, 4],
+    "estimated_recovery_cost": "moderate",
+    "session_duration_range_min": [45, 80],
+    "session_structure_template": [
+      "10 min shoulder/thoracic prep",
+      "Main press + pull superset",
+      "Rotational power work (landmine rotational press or med-ball throws)",
+      "Trunk finisher (Pallof press / anti-rotation walkout)"
+    ],
+    "fight_week_ok": false,
+    "double_session_ok": false,
+    "notes_for_athlete": [
+      "Keep punches snappy; avoid grinding slow reps.",
+      "Use strict rest timing to reinforce discipline.",
+      "Add brief reaction drill finisher if energy is good."
+    ]
+  },
+  {
+    "id": "boxing_conditioning_day",
+    "name": "Boxing Conditioning Day",
+    "purpose": "Build ring-specific repeatability using boxing interval structures.",
+    "primary_goal": "boxing_conditioning",
+    "secondary_goals": ["discipline_pacing", "technical_under_fatigue"],
+    "suitable_when": ["no_heavy_leg_strength_today", "bag_or_space_available"],
+    "avoid_when": ["after_max_strength_lower_day", "signs_of_overreaching"],
+    "preferred_exercise_categories": ["conditioning_boxing_specific", "boxing_specific", "footwork"],
+    "preferred_primary_qualities": ["repeat_sprint_ability", "technical_endurance"],
+    "excluded_categories": ["lower_body_strength", "recovery"],
+    "excluded_exercises": ["back squat", "parasympathetic downregulation walk"],
+    "target_fatigue_range": [3, 4],
+    "estimated_recovery_cost": "moderate",
+    "session_duration_range_min": [40, 75],
+    "session_structure_template": [
+      "8-10 min warm-up and footwork",
+      "Main set: boxing 3x3 intervals",
+      "Supplement: boxing 30/30 flurry intervals",
+      "Cool-down mobility + controlled breathing"
+    ],
+    "fight_week_ok": true,
+    "double_session_ok": false,
+    "notes_for_athlete": [
+      "Prioritize boxing-specific conditioning over generic intervals.",
+      "Stay loose between flurries; shake arms out during rest.",
+      "Stick to fueling plan before/after to avoid undisciplined eating."
+    ]
+  },
+  {
+    "id": "aerobic_base_day",
+    "name": "Aerobic Base Day",
+    "purpose": "Support recovery capacity and long-term engine without heavy nervous-system stress.",
+    "primary_goal": "aerobic_base",
+    "secondary_goals": ["recovery_support", "body_composition_support"],
+    "suitable_when": ["between_high_intensity_days", "high_work_stress_week"],
+    "avoid_when": ["acute_lower_leg_injury", "illness_symptoms"],
+    "preferred_exercise_categories": ["aerobic_base", "mobility", "recovery"],
+    "preferred_primary_qualities": ["zone2_efficiency", "parasympathetic_shift"],
+    "excluded_categories": ["lower_body_power", "conditioning_general"],
+    "excluded_exercises": ["hill sprints", "jump squat"],
+    "target_fatigue_range": [1, 2],
+    "estimated_recovery_cost": "low",
+    "session_duration_range_min": [30, 60],
+    "session_structure_template": [
+      "30-45 min zone 2 run or zone 2 bike",
+      "8-12 min hip/ankle/thoracic mobility",
+      "5 min easy shadow plus breathing reset"
+    ],
+    "fight_week_ok": true,
+    "double_session_ok": true,
+    "notes_for_athlete": [
+      "Keep intensity conversational; this is not a hidden hard day.",
+      "Use this day to stay loose and reduce stress.",
+      "Plan meals ahead to reinforce eating discipline."
+    ]
+  },
+  {
+    "id": "active_recovery_day",
+    "name": "Active Recovery Day",
+    "purpose": "Reduce accumulated fatigue while preserving movement quality.",
+    "primary_goal": "recovery",
+    "secondary_goals": ["staying_loose", "habit_consistency"],
+    "suitable_when": ["after_hard_block", "poor_sleep_night", "high_workload_week"],
+    "avoid_when": ["acute_medical_issue", "fever"],
+    "preferred_exercise_categories": ["recovery", "mobility", "aerobic_base"],
+    "preferred_primary_qualities": ["parasympathetic_recovery", "movement_quality"],
+    "excluded_categories": ["lower_body_strength", "conditioning_boxing_specific"],
+    "excluded_exercises": ["back squat", "boxing 3x3 intervals"],
+    "target_fatigue_range": [1, 1],
+    "estimated_recovery_cost": "low",
+    "session_duration_range_min": [20, 45],
+    "session_structure_template": [
+      "10-20 min easy walk or easy bike",
+      "10-15 min mobility flow",
+      "5-8 min easy shadow plus breathing reset"
+    ],
+    "fight_week_ok": true,
+    "double_session_ok": true,
+    "notes_for_athlete": [
+      "Goal is to feel better after than before.",
+      "Keep joints loose and breathing calm.",
+      "Use this lower-load day to stay on top of meal prep."
+    ]
+  },
+  {
+    "id": "fight_week_sharpening_day",
+    "name": "Fight Week Sharpening Day",
+    "purpose": "Keep speed and sharpness while minimizing soreness and fatigue.",
+    "primary_goal": "fight_week_readiness",
+    "secondary_goals": ["reaction", "confidence"],
+    "suitable_when": ["within_7_days_of_bout", "weight_on_track"],
+    "avoid_when": ["significant_weight_cut_stress", "new_injury_signs"],
+    "preferred_exercise_categories": ["boxing_specific", "reaction", "footwork", "upper_body_power"],
+    "preferred_primary_qualities": ["speed", "timing", "loose_execution"],
+    "excluded_categories": ["lower_body_strength", "conditioning_general"],
+    "excluded_exercises": ["back squat", "hill sprints"],
+    "target_fatigue_range": [1, 2],
+    "estimated_recovery_cost": "low",
+    "session_duration_range_min": [25, 50],
+    "session_structure_template": [
+      "8 min dynamic warm-up",
+      "2-4 short rounds of sharp shadowboxing",
+      "reaction tennis ball catch / visual cue reaction drill",
+      "brief flurry primer then full cooldown"
+    ],
+    "fight_week_ok": true,
+    "double_session_ok": true,
+    "notes_for_athlete": [
+      "No new exercises this week.",
+      "Explosive touches only; stop before fatigue accumulates.",
+      "Keep food choices disciplined and predictable."
+    ]
+  },
+  {
+    "id": "post_fight_recovery_day",
+    "name": "Post-Fight Recovery Day",
+    "purpose": "Restore movement, downregulate stress, and begin returning to baseline.",
+    "primary_goal": "post_fight_restoration",
+    "secondary_goals": ["recovery_support", "staying_loose"],
+    "suitable_when": ["24_to_96h_post_fight", "no_red_flag_injuries"],
+    "avoid_when": ["suspected_concussion", "acute_structural_injury"],
+    "preferred_exercise_categories": ["recovery", "mobility", "aerobic_base"],
+    "preferred_primary_qualities": ["circulation", "range_of_motion", "nervous_system_reset"],
+    "excluded_categories": ["lower_body_power", "conditioning_boxing_specific"],
+    "excluded_exercises": ["jump squat", "boxing 30/30 flurry intervals"],
+    "target_fatigue_range": [1, 1],
+    "estimated_recovery_cost": "low",
+    "session_duration_range_min": [20, 40],
+    "session_structure_template": [
+      "5-10 min parasympathetic downregulation walk",
+      "10-15 min gentle mobility flow",
+      "optional easy shadow plus breathing reset"
+    ],
+    "fight_week_ok": true,
+    "double_session_ok": false,
+    "notes_for_athlete": [
+      "Prioritize recovery and injury monitoring over performance.",
+      "Stay loose with gentle movement only.",
+      "Return immediately to structured eating routine."
+    ]
+  }
+]
